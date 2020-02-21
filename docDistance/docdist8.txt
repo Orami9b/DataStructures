@@ -1,0 +1,40 @@
+docdist8:
+File Hamlet_Prince_of_Denmark.txt :
+199811 lines,
+35476 words,
+5331 distinct words
+File The_Tragedy_of_Coriolanus.txt :
+177056 lines,
+32144 words,
+4275 distinct words
+The distance between the documents is: 0.411565 (radians)
+         53 function calls in 0.125 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        2    0.000    0.000    0.000    0.000 :0(_getdefaultlocale)
+        1    0.000    0.000    0.000    0.000 :0(acos)
+        2    0.016    0.008    0.016    0.008 :0(charmap_decode)
+        1    0.000    0.000    0.125    0.125 :0(exec)
+        7    0.000    0.000    0.000    0.000 :0(len)
+        2    0.000    0.000    0.000    0.000 :0(open)
+        9    0.000    0.000    0.000    0.000 :0(print)
+        2    0.000    0.000    0.016    0.008 :0(read)
+        1    0.000    0.000    0.000    0.000 :0(setprofile)
+        2    0.000    0.000    0.000    0.000 :0(split)
+        1    0.000    0.000    0.000    0.000 :0(sqrt)
+        2    0.062    0.031    0.062    0.031 :0(translate)
+        1    0.000    0.000    0.125    0.125 <string>:1(<module>)
+        2    0.000    0.000    0.000    0.000 _bootlocale.py:11(getpreferredencoding)
+        2    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+        2    0.000    0.000    0.016    0.008 cp1252.py:22(decode)
+        3    0.016    0.005    0.016    0.005 docdist8.py:106(inner_product)
+        1    0.000    0.000    0.016    0.016 docdist8.py:120(vector_angle)
+        1    0.000    0.000    0.125    0.125 docdist8.py:130(main)
+        2    0.000    0.000    0.016    0.008 docdist8.py:42(read_file)
+        2    0.000    0.000    0.062    0.031 docdist8.py:63(get_words_from_text)
+        2    0.031    0.016    0.031    0.016 docdist8.py:75(count_frequency)
+        2    0.000    0.000    0.109    0.055 docdist8.py:90(word_frequencies_for_file)
+        1    0.000    0.000    0.125    0.125 profile:0(main())
+        0    0.000             0.000          profile:0(profiler)

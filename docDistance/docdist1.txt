@@ -1,0 +1,50 @@
+docdist1.py:
+File Hamlet_Prince_of_Denmark.txt :
+5097 lines,        
+36260 words,       
+4987 distinct words
+File The_Tragedy_of_Coriolanus.txt :
+6738 lines,        
+32143 words,       
+4274 distinct words
+The distance between the documents is: 0.369644 (radians)
+         987018 function calls in 25.062 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 :0(__import__)
+        1    0.000    0.000    0.000    0.000 :0(__new__)
+        1    0.000    0.000    0.000    0.000 :0(acos)
+   362266    0.984    0.000    0.984    0.000 :0(append)
+        1    0.000    0.000   25.062   25.062 :0(exec)
+        2    0.000    0.000    0.000    0.000 :0(get)
+   374361    0.812    0.000    0.812    0.000 :0(isalnum)
+        2    0.000    0.000    0.000    0.000 :0(isinstance)
+    68404    0.203    0.000    0.203    0.000 :0(join)
+   101601    0.188    0.000    0.188    0.000 :0(len)
+    68403    0.188    0.000    0.188    0.000 :0(lower)
+        2    0.000    0.000    0.000    0.000 :0(open)
+        9    0.000    0.000    0.000    0.000 :0(print)
+        2    0.016    0.008    0.016    0.008 :0(readlines)
+        1    0.000    0.000    0.000    0.000 :0(setprofile)
+        1    0.000    0.000    0.000    0.000 :0(sqrt)
+       51    0.000    0.000    0.000    0.000 :0(utf_8_decode)
+        1    0.000    0.000   25.062   25.062 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:43(normalize_encoding)
+        1    0.000    0.000    0.000    0.000 __init__.py:70(search_function)
+        2    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+        2    0.000    0.000    0.000    0.000 codecs.py:309(__init__)
+       51    0.000    0.000    0.000    0.000 codecs.py:319(decode)
+        1    0.000    0.000    0.000    0.000 codecs.py:94(__new__)
+        2    0.000    0.000   16.469    8.234 docdist1.py:112(word_frequencies_for_file)
+        3    8.594    2.865    8.594    2.865 docdist1.py:129(inner_product)
+        1    0.000    0.000    8.594    8.594 docdist1.py:144(vector_angle)
+        1    0.000    0.000   25.062   25.062 docdist1.py:154(main)
+        2    0.000    0.000    0.016    0.008 docdist1.py:40(read_file)
+        2    2.328    1.164    7.000    3.500 docdist1.py:55(get_words_from_line_list)
+    11835    2.359    0.000    4.672    0.000 docdist1.py:67(get_words_from_string)
+        2    9.391    4.695    9.453    4.727 docdist1.py:95(count_frequency)
+        1    0.000    0.000   25.062   25.062 profile:0(main())
+        0    0.000             0.000          profile:0(profiler)
+        1    0.000    0.000    0.000    0.000 utf_8.py:33(getregentry)
