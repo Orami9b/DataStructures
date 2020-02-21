@@ -105,28 +105,6 @@ def count_frequency(word_list):
         else:
             L.append([new_word,1])
     return L
-
-###############################################################
-# Operation 4: sort words into alphabetic order             ###
-###############################################################
-def insertion_sort(A):
-    """
-    Sort list A into order, in place.
-
-    From Cormen/Leiserson/Rivest/Stein,
-    Introduction to Algorithms (second edition), page 17,
-    modified to adjust for fact that Python arrays use 
-    0-indexing.
-    """
-    for j in range(len(A)):
-        key = A[j]
-        # insert A[j] into sorted sequence A[0..j-1]
-        i = j-1
-        while i>-1 and A[i]>key:
-            A[i+1] = A[i]
-            i = i-1
-        A[i+1] = key
-    return A
     
 #############################################
 ## compute word frequencies for input file ##
@@ -140,7 +118,6 @@ def word_frequencies_for_file(filename):
     line_list = read_file(filename)
     word_list = get_words_from_line_list(line_list)
     freq_mapping = count_frequency(word_list)
-    insertion_sort(freq_mapping)
 
     print("File",filename,":",)
     print(len(line_list),"lines,",)
@@ -171,8 +148,8 @@ def vector_angle(L1,L2):
     Return the angle between these two vectors.
     """
     numerator = inner_product(L1,L2)
-    denominator = math.sqrt(inner_product(L1,L1)*inner_product(L2,L2))
-    return math.acos(numerator/denominator)
+    denominator = math.sqrt(inner_product(L1,L1) * inner_product(L2,L2))
+    return math.acos(numerator / denominator)
 
 def main():
     if len(sys.argv) != 3:

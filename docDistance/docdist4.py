@@ -46,7 +46,7 @@ def read_file(filename):
         f = open(filename, 'r')
         return f.readlines()
     except IOError:
-        print "Error opening or reading input file: ",filename
+        print("Error opening or reading input file: ", filename)
         sys.exit()
 
 #################################################
@@ -100,10 +100,10 @@ def count_frequency(word_list):
     D = {}
     for new_word in word_list:
         if new_word in D:
-            D[new_word] = D[new_word]+1
+            D[new_word] = D[new_word] + 1
         else:
             D[new_word] = 1
-    return D.items()
+    return list(D.items())
 
 ###############################################################
 # Operation 4: sort words into alphabetic order             ###
@@ -120,11 +120,11 @@ def insertion_sort(A):
     for j in range(len(A)):
         key = A[j]
         # insert A[j] into sorted sequence A[0..j-1]
-        i = j-1
-        while i>-1 and A[i]>key:
-            A[i+1] = A[i]
-            i = i-1
-        A[i+1] = key
+        i = j - 1
+        while i > -1 and A[i] > key:
+            A[i + 1] = A[i]
+            i = i - 1
+        A[i + 1] = key
     return A
     
 #############################################
@@ -141,10 +141,10 @@ def word_frequencies_for_file(filename):
     freq_mapping = count_frequency(word_list)
     insertion_sort(freq_mapping)
 
-    print "File",filename,":",
-    print len(line_list),"lines,",
-    print len(word_list),"words,",
-    print len(freq_mapping),"distinct words"
+    print("File",filename, ":",)
+    print(len(line_list), "lines,",)
+    print(len(word_list), "words,",)
+    print(len(freq_mapping), "distinct words")
 
     return freq_mapping
 
@@ -186,21 +186,15 @@ def vector_angle(L1,L2):
 
 def main():
     if len(sys.argv) != 3:
-        print "Usage: docdist4.py filename_1 filename_2"
+        print("Usage: docdist4.py filename_1 filename_2")
     else:
         filename_1 = sys.argv[1]
         filename_2 = sys.argv[2]
         sorted_word_list_1 = word_frequencies_for_file(filename_1)
         sorted_word_list_2 = word_frequencies_for_file(filename_2)
         distance = vector_angle(sorted_word_list_1,sorted_word_list_2)
-        print "The distance between the documents is: %0.6f (radians)"%distance
+        print("The distance between the documents is: %0.6f (radians)"%distance)
 
 if __name__ == "__main__":
     import profile
     profile.run("main()")
-
-    
-    
-
-
-

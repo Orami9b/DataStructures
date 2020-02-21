@@ -48,7 +48,7 @@ def read_file(filename):
         f = open(filename, 'r')
         return f.read()
     except IOError:
-        print "Error opening or reading input file: ",filename
+        print("Error opening or reading input file: ",filename)
         sys.exit()
 
 #################################################
@@ -57,10 +57,10 @@ def read_file(filename):
 
 # global variables needed for fast parsing
 # translation table maps upper case to lower case and punctuation to spaces
-translation_table = string.maketrans(string.punctuation+string.uppercase,
-                                     " "*len(string.punctuation)+string.lowercase)
+translation_table = str.maketrans(string.punctuation+string.ascii_uppercase,
+                                     " "*len(string.punctuation)+string.ascii_lowercase)
 
-def get_words_from_line_list(text):
+def get_words_from_text(text):
     """
     Parse the given text into words.
     Return list of all words found.
@@ -92,14 +92,14 @@ def word_frequencies_for_file(filename):
     Return dictionary of (word,frequency) pairs for the given file.
     """
 
-    line_list = read_file(filename)
-    word_list = get_words_from_line_list(line_list)
+    text = read_file(filename)
+    word_list = get_words_from_text(text)
     freq_mapping = count_frequency(word_list)
 
-    print "File",filename,":",
-    print len(line_list),"lines,",
-    print len(word_list),"words,",
-    print len(freq_mapping),"distinct words"
+    print("File",filename,":",)
+    print(len(text),"lines,",)
+    print(len(word_list),"words,",)
+    print(len(freq_mapping),"distinct words")
 
     return freq_mapping
 
@@ -129,21 +129,15 @@ def vector_angle(D1,D2):
 
 def main():
     if len(sys.argv) != 3:
-        print "Usage: docdist8.py filename_1 filename_2"
+        print("Usage: docdist8.py filename_1 filename_2")
     else:
         filename_1 = sys.argv[1]
         filename_2 = sys.argv[2]
         sorted_word_list_1 = word_frequencies_for_file(filename_1)
         sorted_word_list_2 = word_frequencies_for_file(filename_2)
         distance = vector_angle(sorted_word_list_1,sorted_word_list_2)
-        print "The distance between the documents is: %0.6f (radians)"%distance
+        print("The distance between the documents is: %0.6f (radians)"%distance)
 
 if __name__ == "__main__":
     import profile
     profile.run("main()")
-
-    
-    
-
-
-
